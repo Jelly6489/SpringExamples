@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import styles from'./App.css';
 import MyTestComponent from './MyTestComponent'
 import DefaultPropsTest from './DefaultPropsTest'
 import TypePropsTest from './TypePropsTest'
@@ -19,6 +19,14 @@ import BGTest from './reference/BGTest'
 import RefBGTest from './reference/RefBGTest'
 import RefBoxTest from './reference/RefBoxTest'
 import RefBoxBottomTest from './reference/RefBoxBottomTest'
+import IterationSample from './repeat/IterationSample'
+import StateBasedIteration from './repeat/StateBasedIteration'
+import StateBasedEventIteration from './repeat/StateBasedEventIteration'
+import LifeCycleSample from './lifecycle/LifeCycleSample'
+import SassComponent from './SassComponent'
+
+import classNames from 'classnames/bind'
+const cx = classNames.bind(styles)
 
 // function App() {
 class App extends Component {
@@ -31,6 +39,17 @@ class App extends Component {
             height: Math.round(Math.random() * 300) + 50,
             width: Math.round(Math.random() * 300) + 50,
         }
+        /*
+        const box = {
+            display: "inline-block",
+            width: "100px",
+            height: "100px",
+            border: "1px solid black",
+            position: "fixed",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)"
+        } */
         return (
             <div className="my-div">
                 <h1>Hello ReactJS</h1>
@@ -71,6 +90,17 @@ class App extends Component {
                 <RefBoxTest/>
                 <RefBoxBottomTest ref={(ref) => this.refBoxBottomTest = ref}/>
                 <button onClick={() => this.refBoxBottomTest.scrollToBottom()}>Bottom</button>
+                <IterationSample/>
+                <StateBasedIteration/>
+                <StateBasedEventIteration/>
+                <LifeCycleSample/>
+                <div className={ cx('testbox', 'blue') }>
+                    <h1>Hi</h1>
+                </div>
+                <div>
+                    <h1>Hello</h1>
+                    <SassComponent/>
+                </div>
             </div>
         );
     }
