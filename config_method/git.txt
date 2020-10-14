@@ -140,8 +140,38 @@ git status
 
 git log --oneline --all
 git branch
+cat echo.txt
 
+##################################################
+fork Repository
+mkdir account
+mkdir remote
+cd account/ // 포크 저장소(사본)
+git clone https://github.com/Jelly6489/Mercenary.git // 포크 저장소
+cd ../remote // 원격 저장소(원본)
+git clone https://github.com/embedded-bitai/Mercenary.git // 원격 저장소
+// 원격 저장소 requests
+cd proj/
+mkdir -p test/jaeyong
+cd test/jaeyong/
+echo "test jy" > test.txt
+cat test.txt
+git status
+git add test.txt
+git commit -am "Test Jy"
+git push origin master
 
-
+// merge
+cd ../
+git remote -v
+git remote add upstream https://github.com/embedded-bitai/Mercenary.git
+git remote -v
+git fetch upstream
+cd test
+ls
+git branch
+cd ..
+git merge upstream/master
+ls test
 
 
