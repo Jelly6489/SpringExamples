@@ -1,0 +1,147 @@
+### Git (Console)
+cd ~~~team_proj
+git clone https://github.com/embedded-bitai/BlackTensor.git
+
+# 이동
+echo "test" test
+echo "test" > dummy.txt
+cat dummy.txt test
+cd proj/
+mkdir golang
+cd golang/
+mv ../../dummy.txt
+git status
+
+### git (fork Console)
+오른쪽 상당 fork click
+cd team_proj/
+git clone https://github.com/Jelly6489/BlackTensor.git
+cd BlackTensor
+cd proj/
+mkdir -p test/jaeyongkim
+ls -R test
+cd test/jaeyongkim/
+echo "test" > test.txt
+git status
+git add ../
+git status
+git commit -am "It's for test(Jaeyong)"
+git push origin master
+ID, Pw
+
+#############################################################################
+mkdir git_test
+mkdir git_local_test
+cd git_local_test/
+echo "git_local_test"
+echo "git_local_test" > git_local_test.txt
+cat git_local_test.txt
+ls -al
+git init
+git config --list
+git config --global user.name "jelly6489"
+git config --global user.email "rlaalsrlzld@naver.com"
+git status
+git add git_local_test.txt
+git status
+git commit -am "First Local Commit"
+git status
+vi git_local_test.txt
+echo "hello second commit" >> git_local_test.txt
+cat git_local_test.txt
+git status
+// 이전 commit 내용 삭제
+git log
+git checkout fcce3cfc4632063f1685c2f98f71f5db5e8db063
+cat git_local_test.txt
+// 롤백
+git log
+git checkout -
+cat git_local_test.txt
+
+git사이트에서 Repository 생성
+git remote add origin https://github.com/Jelly6489/git_remote_test.git
+git push origin master
+mkdir git_remote_down
+git clone https://github.com/Jelly6489/git_remote_test.git
+cd git_remote_test
+echo "git remote test" > git_remote_test.txt
+git add git_remote_test.txt
+git commit -am "Git Remote Test"
+git branch
+git checkout -t origin/main
+git branch
+git pull
+git log --oneline
+git log --oneline --graph --all --decorate
+
+mkdir git_cli_remote
+cd git_cli_remote/
+git init
+echo "hello git" > hello.txt
+git status
+git add hello.txt
+git status
+git reset hello.txt
+git status
+
+###########################################
+git branch
+cat hello.txt
+git add hello.txt
+git status
+
+cd git_cli_remote_test/
+touch a v c d e f g
+git status
+git add a c d e f g v
+git status
+git branch
+git clone https://github.com/Jelly6489/git_cli_remote_test.git git_cli_local
+
+
+echo "echo"
+echo "echo" > echo.txt
+cat echo.txt
+git status
+git add echo.txt
+git log
+git commit -am "Second Test"
+git push // branch가 하나면 git push만으로 가능
+git branch
+git log
+git log --oneline
+
+############################
+git branch
+git branch my_test_branch
+git branch
+git log --oneline --all
+git checkout my_test_branch
+git branch
+echo "Third Test" >> echo.txt
+cat echo.txt
+git status
+git commit -am "Third Test"
+
+echo "additional test" > git_test.txt
+ls git_test.txt
+git_test.txt
+git status
+git add git_test.txt
+git commit -am "Additional Test"
+git log --oneline --all --graph
+git checkout main
+cat echo.txt
+git branch
+git merge my_test_branch
+cat echo.txt
+git status
+
+git log --oneline --all
+git branch
+
+
+
+
+

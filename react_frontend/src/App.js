@@ -3,6 +3,7 @@ import React, { useState, useRef, useCallback } from 'react';
 import TodoTemplate from "./todo_components/TodoTemplate";
 import TodoInsert from "./todo_components/TodoInsert";
 import TodoList from "./todo_components/TodoList";
+import CounterContainer from "./asynchronous/CounterContainer";
 
 const App = () => {
     const [todos, setTodos] = useState([
@@ -61,6 +62,7 @@ const App = () => {
                 <TodoInsert onInsert={ onInsert }/>
                 <TodoList todos={ todos } onRemove={ onRemove } onToggle={ onToggle }/>
             </TodoTemplate>
+            <CounterContainer/>
         </div>
     );
 }
